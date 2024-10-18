@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles/bootstrap-5.3.3/dist/css/bootstrap.css">
+    <style>
+        .fade-in {
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 5s forwards;
+            z-index: 1;
+        }
+
+        .fade-in::before, .fade-in::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%);
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            animation: godrays 5s forwards;
+            z-index: -1;
+        }
+
+        .fade-in::after {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes godrays {
+            to {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Collapsible Sections</h2>
+        <div class="row">
+            <div class="col-12 col-lg-4 mb-3 d-flex justify-content-center">
+                <button class="btn btn-primary w-75 w-lg-100 fade-in" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Toggle Collapse One
+                </button>
+                <div class="collapse" id="collapseOne">
+                    <div class="card card-body">
+                        This is the first collapsible section.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-4 mb-3 d-flex justify-content-center">
+                <button class="btn btn-primary w-75 w-lg-100 fade-in" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Toggle Collapse Two
+                </button>
+                <div class="collapse" id="collapseTwo">
+                    <div class="card card-body">
+                        This is the second collapsible section.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-4 mb-3 d-flex justify-content-center">
+                <button class="btn btn-primary w-75 w-lg-100 fade-in" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Toggle Collapse Three
+                </button>
+                <div class="collapse" id="collapseThree">
+                    <div class="card card-body">
+                        This is the third collapsible section.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/styles/bootstrap-5.3.3/dist/js/bootstrap.js"></script>
+</body>
+</html>
