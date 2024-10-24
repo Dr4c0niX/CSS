@@ -1,37 +1,45 @@
-.fade-in {
-    position: relative;
-    opacity: 0;
-    animation: fadeIn 5s forwards;
-    z-index: 1;
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+/* J'ai utilisé les couleurs primary et secondary que vous avez fourni dans le sujet en modifiant les partials lignes 301/302 dans le dossier .\assets\styles\bootstrap-5.3.3\scss\_variables.scss 
+et en utilisant après la commande 'npm run dist' */
+
+body{
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+    url("../Images/landscape.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.fade-in::before, .fade-in::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%);
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-    animation: godrays 5s forwards;
-    z-index: -1;
+.section-glassmorphism{
+background: rgba(251, 251, 239, 0.53);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10.1px);
+-webkit-backdrop-filter: blur(10.1px);
+border: 1px solid rgba(251, 251, 239, 0.3);
 }
 
-.fade-in::after {
-    animation-delay: 0.5s;
+.fancyBorder-hero-img{
+   border-radius: 30% 70% 73% 27% / 30% 30% 70% 70%;
+  }
+  
+.fancyBorder-navbar{
+    border-radius:55% 42% 48% 51% / 44% 60% 40% 52%;
+    border: 5px solid #4357AD;
+  }
+
+.navbar--logo {
+    max-height: 100px;
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+.cta-button {
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-@keyframes godrays {
-    to {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
+.cta-button:hover {
+    background-color: transparent; 
+    border-color: primary;
 }
